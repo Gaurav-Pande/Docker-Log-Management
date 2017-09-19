@@ -40,7 +40,7 @@ All the components used in this repo is opensource. All you need to have is a ci
 
 ### Step1: Clone the repository
 
-git clone https://cto-github.cisco.com/gpande2/LogManagement.git
+git clone https://github.com/Gaurav-Pande/DockerLogManagement.git
 
 ### Step2: Bring Ios Xr Image
 
@@ -52,7 +52,7 @@ Vagrant up
 CLI Output:
 
 ```
-GPANDE2-M-718F:LogManagemnet gpande2$ vagrant up
+LogManagemnet$ vagrant up
 Ignoring ffi-1.9.10 because its extensions are not built.  Try: gem pristine ffi --version 1.9.10
 Ignoring nokogiri-1.6.3.1 because its extensions are not built.  Try: gem pristine nokogiri --version 1.6.3.1
 Ignoring unf_ext-0.0.7.1 because its extensions are not built.  Try: gem pristine unf_ext --version 0.0.7.1
@@ -104,7 +104,7 @@ docker-compose up
 CLI-output
 
 ```
-GPANDE2-M-718F:FEK gpande2$ docker-compose up
+FEK$ docker-compose up
 Starting elasticsearch
 Recreating fluentd
 Starting kibana
@@ -121,7 +121,7 @@ ssh vagrant@localhost -p 2012
 CLI-Output
 
 ```
-GPANDE2-M-718F:LogManagemnet gpande2$ ssh vagrant@localhost -p 2014
+LogManagemnet $ ssh vagrant@localhost -p 2014
 Password: 
 
 
