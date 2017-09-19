@@ -1,0 +1,56 @@
+version: "2.1"
+services:
+#Define fluentd Service using a manual port.
+  fluentd:
+    build: ./fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+    links:
+      - "elasticsearch"
+    ports:
+      - "24224:24224"
+      - "24224:24224/udp"
+    container_name: fluentd
+    networks:
+      logging-network:
+       ipv4_address: 172.30.0.10
+
+#Define Elasticsearch service using default ports. 
+  elasticsearch:
+    image: elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    container_name: elasticsearch
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://172.30.0.20:9200"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+    networks:
+      logging-network:
+        ipv4_address: 172.30.0.20
+
+#Define Kibana service and give it the connection for elasticsearch.
+  kibana:
+    image: kibana
+    ports: 
+      - "5601:5601"
+    container_name: kibana
+    networks:
+      logging-network:
+        ipv4_address: 172.30.0.30
+    environment:
+      ELASTICSEARCH_URL: http://172.30.0.20:9200
+    depends_on:
+      elasticsearch:
+        condition: service_healthy    
+
+#Create custom network for our environment
+networks:
+  logging-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.30.0.0/16

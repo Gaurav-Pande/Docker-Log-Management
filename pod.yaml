@@ -1,0 +1,4 @@
+router:
+   gig-eth-0: 172.30.0.7
+   router_ssh: 2014
+   netconf_tcp: 2830

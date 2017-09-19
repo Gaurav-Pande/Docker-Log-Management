@@ -1,0 +1,22 @@
+!! XR configuration
+!
+hostname test_XR
+domain name cisco.com
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 172.30.0.5 255.255.0.0
+ no shutdown
+!
+grpc
+  port 57789
+
+ssh server v2
+ssh server netconf vrf default
+ssh server logging
+xml agent ssl
+xml agent tty
+netconf agent tty
+netconf-yang agent ssh
+!
+end
+
