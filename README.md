@@ -10,7 +10,7 @@ All the components used in this repo is opensource. All you need to have is a ci
 3. Kibana
 
 
-![Image]()
+![Image](https://github.com/Gaurav-Pande/DockerLogManagement/blob/master/assets/fluentd.png)
 
 
 ## Technologies Used
