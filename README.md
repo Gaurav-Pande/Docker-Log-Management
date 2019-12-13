@@ -1,4 +1,4 @@
-# LogManagement
+# Log Management
 
 <center>
 <img src="assets/fluentd.png"/>
