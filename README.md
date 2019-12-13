@@ -1,5 +1,10 @@
 # LogManagement
 
+<center>
+<img src="assets/fluentd.png"/>
+</center>
+
+
 This repository will let you deploy a Logging stack and monitors for the syslog messages coming from the cisco ios xr devices. This same repository can be used for visualizing the logging information of the various containers.This will be introduced in detailed in coming days.
 All the components used in this repo is opensource. All you need to have is a cisco iosds
 
@@ -10,7 +15,8 @@ All the components used in this repo is opensource. All you need to have is a ci
 3. Kibana
 
 
-![Image](https://github.com/Gaurav-Pande/DockerLogManagement/blob/master/assets/fluentd.png)
+
+
 
 
 ## Technologies Used
